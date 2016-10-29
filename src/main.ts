@@ -1,11 +1,13 @@
-import {Two} from "./two";
+import {SocialNetwork} from './social-network';
 
-new Two();
+import * as _ from 'lodash';
 
-class App{
-    constructor(){
-        console.log('Hello world, I am working');
-    }
+class App implements SocialNetwork {
+  title = "Eggheads";
+
+  getUsers() {
+    return [{name:"John"}];
+  }
 }
 
-new App();
+console.log(_.isArray(new App().getUsers()));
